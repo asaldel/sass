@@ -1,0 +1,36 @@
+/* Esto es un comentario*/
+div {
+  background-color: red;
+  color: blue;
+  font-weight: bold;
+  font-size: 10pt;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid yellow;
+}
+div .prueba {
+  color: grey;
+  border: 2px dashed red;
+}
+div .prueba a {
+  font-size: 30pt;
+}
+div .prueba a span {
+  font-size: 30pt;
+}
+div-grande {
+  font-size: 26pt;
+}
+div-peque {
+  font-size: 5pt;
+}
+div:hover {
+  background-color: blue;
+}
+div a {
+  color: white;
+}
+div a:hover {
+  color: grey;
+}
+
+/*# sourceMappingURL=3-12-2018_scss.css.map */

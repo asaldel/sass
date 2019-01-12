@@ -1,0 +1,65 @@
+$width: 20px;
+$height: 40px;
+
+// Funciones 
+@function mysize($w:4, $h:5){
+    @return $w/$h+2*3-45+4;
+}
+
+.chachi{
+    width: 20px;
+    height: 40px;
+    // Llamada a la función mysize() 
+    padding: mysize($h:$width, $w:$height); // Intercambiando el orden de las variables
+    margin: mysize($width, $height);
+    padding-left: mysize();
+}
+
+// Funciones con argumentos variables
+@function mysize($a, $param...){
+    $x: length($param);
+    $y: nth($param, 1);
+    @return "El usuario ha enviado #{$x} parámetros y el primero es #{$y}";
+}
+
+@function mysum($sumandos...){
+    $resultado: 0;
+    @each $var in $sumandos {
+        $resultado: $resultado + $var;
+    }
+    @return $resultado;
+}
+
+// Mixins
+@mixin miscolores($color: red, $bgcolor: white){
+    color: $color;
+    background-color: $bgcolor; 
+}
+
+.chachi2{
+    @include miscolores;
+    width: 20px;
+    height: 40px;
+}
+
+.chachi3{
+    @include miscolores(blue, yellow);
+    width: 20px;
+    height: 40px;
+}
+
+@mixin vendors($class, $prop, $name){
+	$vendors: ms, o, webkit, moz;
+	@content; // Recibir código en el mixin
+	@each $v in $vendors {
+		-#{$v}-#{$class}-#{$prop}: $name; 
+	}
+	#{$class}-#{$prop}: $name; 
+}
+
+.chachi4{
+	@include miscolores(blue, yellow);
+	@include vendors("animation", "name", "mianimacion"){
+		margin: 5pt; // Poner código CSS en la llamada del mixin
+	}
+}	

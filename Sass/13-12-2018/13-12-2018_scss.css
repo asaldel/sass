@@ -1,0 +1,56 @@
+td {
+  border: 1px solid black;
+  padding: 20px;
+  width: 120px;
+  text-align: center;
+}
+
+.cernicalo {
+  color: brown;
+}
+
+.paloma {
+  color: white;
+}
+
+.petirrojo {
+  color: red;
+}
+
+.paloma {
+  font-size: 12px;
+}
+
+.petirrojo {
+  font-size: 12px;
+}
+
+.paloma-X {
+  color: red;
+}
+
+.petirrojo-Y {
+  color: red;
+}
+
+.micolor-20 {
+  background-color: #005db7;
+}
+
+.micolor-10 {
+  background-color: #0077ea;
+}
+
+.micolor0 {
+  background-color: dodgerblue;
+}
+
+.micolor10 {
+  background-color: #51a9ff;
+}
+
+.micolor20 {
+  background-color: #84c2ff;
+}
+
+/*# sourceMappingURL=13-12-2018_scss.css.map */

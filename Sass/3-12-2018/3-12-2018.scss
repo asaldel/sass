@@ -1,0 +1,46 @@
+/* Esto es un comentario*/
+$size:10pt;
+div{
+    background-color: red; // Esto es otro comentario que no se envía al css
+    color: blue;
+    // Anidamiento de atributos
+    font: {
+        weight: bold;
+        size: 10pt;
+        family: 'Courier New', Courier, monospace;
+    }    
+    border: 1px solid yellow;
+
+    .prueba{
+        color: grey;
+        border: 2px dashed red;
+
+        a{
+            font-size: 30pt;
+
+            span{
+                font-size: 30pt;
+            }
+        }
+    }
+
+    // Acceder al padre: &
+    &-grande{
+        font-size: $size + 16pt;
+    }
+
+    &-peque{
+        font-size: round($size / 2.12);
+    }
+    
+    &:hover{
+        background-color: blue;
+    }
+
+    a{
+        color: white;
+        &:hover{
+            color: grey;
+        }
+    }
+}

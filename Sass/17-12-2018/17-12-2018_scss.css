@@ -1,0 +1,34 @@
+.chachi {
+  width: 20px;
+  height: 40px;
+  padding: -33;
+  margin: -34.5;
+  padding-left: -34.2;
+}
+
+.chachi2 {
+  color: red;
+  background-color: white;
+  width: 20px;
+  height: 40px;
+}
+
+.chachi3 {
+  color: blue;
+  background-color: yellow;
+  width: 20px;
+  height: 40px;
+}
+
+.chachi4 {
+  color: blue;
+  background-color: yellow;
+  margin: 5pt;
+  -ms-animation-name: "mianimacion";
+  -o-animation-name: "mianimacion";
+  -webkit-animation-name: "mianimacion";
+  -moz-animation-name: "mianimacion";
+  animation-name: "mianimacion";
+}
+
+/*# sourceMappingURL=17-12-2018_scss.css.map */

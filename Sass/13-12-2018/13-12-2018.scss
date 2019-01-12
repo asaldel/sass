@@ -1,0 +1,125 @@
+td {
+    border: 1px solid black;
+    padding: 20px;
+    width: 120px;
+    text-align: center;
+}
+
+$map: (cernicalo: brown, paloma: white, petirrojo: red);
+
+@each $ave,$color in $map {
+    .#{$ave}{
+        color: $color;
+    }
+}
+
+$map: map-remove($map, cernicalo);
+@debug map-keys($map);
+@warn map-values($map);
+// @error map-get($map, paloma);
+
+@each $val in map-keys($map) {
+    .#{$val}{
+        font-size: 12px;
+    }
+}
+
+@debug type-of($map);
+@debug type-of(#445566);
+@debug type-of(12pt);
+@debug unit(12pt);
+@debug unit(12);
+@debug type-of("5pt");
+@debug "Elementos del mapa:", length($map);
+
+// Acceder a la primera sublista y ver el índice de 'c'
+$list: a b c, d e;
+@debug type-of($list);
+@debug "Elementos de la lista:", length(nth($list, 1));
+@debug "Índice de 'c':", index(nth($list, 1), c);
+
+// Acceder a la segunda sublista y ver el índice de 'c'
+$list: a b c, d e;
+@debug type-of($list);
+@debug "Elementos de la lista:", length(nth($list, 2));
+@debug "Índice de 'c':", index(nth($list, 2), c);
+
+// Añadir a la lista y poner ',' como separador. Ver la longitud de la lista y el índice de 'c'
+$list: a b c d e;
+$list: append($list, f, comma);
+@debug $list;
+@debug type-of($list);
+@debug "Elementos de la lista:", length($list);
+@debug "Índice de 'c':", index($list, c);
+
+$aves: cernicalo, paloma, petirrojo;
+$colores: brown, white, red;
+$tams: 12pt, 4pt, 3pt;
+
+$aves: append($aves, canario, list-separator($aves));
+$colores: append($colores, yellow);
+$tams: append($tams, 5pt);
+
+// zip
+@debug zip($aves, $colores, $tams);
+
+// join
+
+// Estructuras de control: @if-@else
+
+// Equivalente a operador ternario de Java
+$a: if(length($aves) > 3, 5, 9);
+@debug a, $a;
+
+@each $ave, $color in $map {
+    @if $ave == paloma or $ave == cernicalo{
+        .#{$ave}-X{
+            color: red;
+        }
+    }
+    @else{
+        .#{$ave}-Y{
+            color: red;
+        }
+    }
+
+    // unit()
+    // unitless()
+    // comparable()
+}
+
+// Bucles: 
+
+// @for
+@for $i from 1 through length($aves) {
+    @debug "Mi ave es " + nth($aves, $i);
+}  
+
+// @while
+$i: 1;
+@while $i <= length($aves){
+    @debug "Mi ave es " + nth($aves, $i);
+    $i: $i + 1; 
+}
+
+$colores: -20 -10 0 10 20;
+$color_base: dodgerblue;
+@for $i from 1 through length($colores) {
+    @if(nth($colores, $i) < 0){
+        .micolor#{nth($colores, $i)}{
+            background-color: darken($color_base, abs(nth($colores, $i))); 
+        }
+    }
+
+    @if(nth($colores, $i) == 0){
+        .micolor#{nth($colores, $i)}{
+            background-color: $color_base;
+        }
+    }
+
+    @if(nth($colores, $i) > 0){
+        .micolor#{nth($colores, $i)}{
+            background-color: lighten($color_base, abs(nth($colores, $i)));
+        }
+    }
+} 

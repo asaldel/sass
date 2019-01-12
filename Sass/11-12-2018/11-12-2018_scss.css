@@ -1,0 +1,141 @@
+@import "prueba.css";
+td {
+  border: 1px solid black;
+  padding: 20px;
+  width: 120px;
+  text-align: center;
+}
+
+.base {
+  background-color: dodgerblue;
+}
+
+.base-15 {
+  background-color: #6bb6ff;
+}
+
+.base15 {
+  background-color: #006ad1;
+}
+
+#midiv {
+  font: 16pt/2;
+  border: 4pt solid black;
+  background: 8pt;
+  width: 50pt;
+  content: "Esto es una prueba y el valor es 9";
+}
+
+.miclase {
+  color: red;
+}
+
+.miclase-small {
+  color: red;
+}
+
+div {
+  color: red;
+}
+
+#div {
+  color: red;
+}
+
+.prb, .prb2 {
+  color: red;
+  border: 1px solid blue;
+}
+
+.prb2 {
+  font-size: 12pt;
+}
+
+.prb4 {
+  color: red;
+  border: 1px solid blue;
+}
+
+.prb4 {
+  font-size: 12pt;
+}
+
+.prb-list1 {
+  color: red;
+}
+
+.prb-list4 {
+  color: red;
+}
+
+.prb-list5 {
+  color: red;
+}
+
+.prb-list6 {
+  color: red;
+}
+
+.prb-list7 {
+  color: red;
+}
+
+.prbCernicalo {
+  color: brown;
+  font-size: 12pt;
+  border: 4px solid blue;
+}
+
+.prbPaloma {
+  color: white;
+  font-size: 4pt;
+  border: 6px solid blue;
+}
+
+.prbPetirrojo {
+  color: red;
+  font-size: 3pt;
+  border: 8px solid blue;
+}
+
+.prb1 {
+  font-size: 2px;
+}
+
+.prb2 {
+  font-size: 3px;
+}
+
+.prb3 {
+  font-size: 4px;
+}
+
+.prb4 {
+  font-size: 5px;
+}
+
+.prb5 {
+  font-size: 6px;
+}
+
+.prb6 {
+  font-size: 7px;
+}
+
+.test2 {
+  color: red;
+}
+
+.cernicalo {
+  color: brown;
+}
+
+.paloma {
+  color: white;
+}
+
+.petirrojo {
+  color: red;
+}
+
+/*# sourceMappingURL=11-12-2018_scss.css.map */

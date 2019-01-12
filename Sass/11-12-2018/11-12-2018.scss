@@ -1,0 +1,125 @@
+$color_base: dodgerblue;
+$size : 100pt;
+$miClase: miclase !default;
+$mitag: div;
+
+td{
+    border: 1px solid black;
+    padding: 20px;
+    width: 120px;
+    text-align: center;
+}
+
+.base{
+    background-color: $color_base;
+}
+
+.base-15{
+    background-color: lighten($color_base, 15%);
+}
+
+.base15{
+    background-color: darken($color: $color_base, $amount: 15%);
+}
+
+#midiv{
+    font: 16pt/2;
+    border: (8pt/2) solid black;
+    background: 0 + 16pt/2;
+    width: $size / 2;
+    content: "Esto es una prueba y el valor es #{4+5}";
+}
+
+// Clase con variables
+.#{$miClase}{
+    color: red;
+}
+
+.#{$miClase}-small{
+    color: red;
+}
+
+// Elementos HTML con variables
+#{$mitag}{
+    color: red;
+}
+
+// Id con variables
+##{$mitag}{
+    color: red;
+}
+
+// @extend
+.prb{
+    color: red;
+    border: 1px solid blue;
+}
+
+.prb2{
+    @extend .prb;
+    font-size: 12pt;
+}
+
+// Bloque de código (no se ve la clase prb3 en el .css)
+%prb3{
+    color: red;
+    border: 1px solid blue;
+}
+
+.prb4{
+    @extend %prb3;
+    font-size: 12pt;
+}
+
+// @import
+// Añade el import al principio del fichero .css
+@import "prueba.css";
+
+// Copia el contenido del fichero .scss al fichero .css
+// @import "prueba.scss";
+
+// Listas
+$milista: 1 4 5 6 7;
+
+@each $var in $milista {
+    .prb-list#{$var}{
+        color: red;
+    }
+}
+
+// Listas anidadas
+$pajaros: (Cernicalo, brown, 12pt), (Paloma, white, 4pt), (Petirrojo, red, 3pt);
+$border: 4px;
+
+@each $ave,$color,$size in $pajaros {
+    .prb#{$ave}{
+        color: $color;
+        font-size: $size;
+        border: $border solid blue;
+    }
+    $border : $border + 2;
+}
+
+
+// index() de una lista
+$milista2: 2 3 4 5 6 7;
+@each $var in $milista2 {
+    $i: index($milista2, $var);
+    .prb#{$i}{
+        font-size: #{$var}px;
+    }
+}
+
+// Sacar el primer elemento de una lista
+.test#{nth($milista2, 1)}{
+    color: red;
+}
+
+// Mapa
+$map: (cernicalo: brown, paloma: white, petirrojo: red);
+
+@each $ave, $color in $map {
+    .#{$ave}{
+        color: $color;
+    }
+}
